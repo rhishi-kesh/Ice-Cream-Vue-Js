@@ -32,7 +32,9 @@
                 <div>
                     <div class="icecream" id="icecream">
                         <p class="cone"></p>
-                        <div class="question"></div>
+                        <div class="scoop" v-for="carItem in cart" :class="carItem.name.toLowerCase()"></div>
+                        <div class="cherry" v-if="cart.length > 0"></div>
+                        <div class="question" v-else></div>
                     </div>
                 </div>
                 <!-- ice cream end -->
@@ -42,30 +44,19 @@
                     <div class="builder">
                         <h3>
                             Build your cool Ice Cream
-                            <span class="quantity"></span>
+                            <span class="quantity" :style="cart.length === 0 ? {color: 'red'} : {}">{{ cart.length }}</span>
                         </h3>
                         <!-- items start -->
                         <div id="items">
                             <ul>
                                 <!-- item start -->
-                                <li class="item" >
-                                    <span>yy</span>
+                                <li class="item" :key="variant.id" v-for="variant in variants">
+                                    <span>{{ variant.name }}</span>
                                     <div class="right">
-                                        <button type="button" class="plus rounded" >
+                                        <button type="button" class="plus rounded" v-on:click="addToCart(variant.id)">
                                             +
                                         </button>
-                                        <button type="button" class="minus rounded">
-                                            -
-                                        </button>
-                                    </div>
-                                </li>
-                                <li class="item" >
-                                    <span>yy</span>
-                                    <div class="right">
-                                        <button type="button" class="plus rounded" >
-                                            +
-                                        </button>
-                                        <button type="button" class="minus rounded">
+                                        <button type="button" class="minus rounded" v-on:click="removeFormCart(variant.id)">
                                             -
                                         </button>
                                     </div>
@@ -78,7 +69,7 @@
                         <!-- total price start -->
                         <div class="total" id="total">
                             <div>Total Price</div>
-                            <div> Tk</div>
+                            <div>{{ total }} Tk</div>
                         </div>
                         <!-- total price end -->
                         <button type="button" class="order rounded">
@@ -111,7 +102,7 @@
     <!-- Vue js CDN -->
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="main.js"></script>
+    <script src="./main.js"></script>
     <script>
         const mountedApp = app.mount('#app');
     </script>
