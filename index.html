@@ -71,7 +71,7 @@
                     </div>
 
                     <!-- modal start -->
-                    <order-form :cart="cart" v-if="showModal" @toggle-order-form="toggleModal"></order-form>
+                    <order-form :cart="cart" :total="total" v-if="showModal" @toggle-order-form="toggleModal" @clear-cart="clearCart"></order-form>
                     <!-- modal end -->
                 </div>
                 <!-- builder end -->
@@ -85,7 +85,7 @@
                 <div>Copyright &copy;2020.</div>
                 <div class="textRight">
                     Built with <span class="red">&hearts;</span> by
-                    <a href="https://youtube.com/@robinncode" target="_blank">MsM Robin</a>
+                    <a href="https://github.com/Reshikash" target="_blank">Rhishi Kesh</a>
                 </div>
             </div>
         </footer>
