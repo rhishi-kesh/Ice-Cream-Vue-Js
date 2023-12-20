@@ -29,14 +29,7 @@
         <div class="mainBody" id="body">
             <div class="container" id="iceCreamBuilder">
                 <!-- icecream start -->
-                <div>
-                    <div class="icecream" id="icecream">
-                        <p class="cone"></p>
-                        <div class="scoop" v-for="carItem in cart" :class="carItem.name.toLowerCase()"></div>
-                        <div class="cherry" v-if="cart.length > 0"></div>
-                        <div class="question" v-else></div>
-                    </div>
-                </div>
+                <ice-cream :cart="cart"></ice-cream>
                 <!-- ice cream end -->
 
                 <!-- builder start -->
@@ -72,13 +65,13 @@
                             <div>{{ total }} Tk</div>
                         </div>
                         <!-- total price end -->
-                        <button type="button" class="order rounded">
+                        <button type="button" class="order rounded" v-on:click="toggleModal">
                             Proceed
                         </button>
                     </div>
 
                     <!-- modal start -->
-                    
+                    <order-form :cart="cart" v-if="showModal" @toggle-order-form="toggleModal"></order-form>
                     <!-- modal end -->
                 </div>
                 <!-- builder end -->
@@ -103,6 +96,8 @@
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./main.js"></script>
+    <script src="./components/IceCream.js"></script>
+    <script src="./components/OrderFrom.js"></script>
     <script>
         const mountedApp = app.mount('#app');
     </script>
