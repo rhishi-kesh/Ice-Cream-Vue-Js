@@ -1,28 +1,18 @@
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <h3 align="center"><a href="https://github.com/robinNcode/ice-cream">Introduction to Vue.js with a Project - Ice Cream Builder App</a></h3>
+<h2>Project Name: Ice-Cream Vue JS</h2>
+<p>It's A Simple Vue Project. i learn vue components, props, data binding, conditional rendering and many more on this project.</p>
 
-<!-- TABLE OF CONTENTS -->
+## Contributor
 
-## Table of Contents
+-   <a href="https://github.com/rhishi-kesh" target="_blank">Rhishi kesh</a>
 
-- [How to run](#how-to-run)
-- [Contact](#contact)
+## Technology Used
 
-<!-- HOW TO RUN -->
+- Vue JS
 
-## How to run
+## Installation
 
-Please follow the below instructions to run this project in your machine:
+To Install & Run This Project You Have To Follow Thoose Following Steps:
 
-1. Clone this repository
-   ```sh
-   git clone https://github.com/robinncode/ice-cream.git
-   ```
-2. Duble click the index.html and open it in your browser - done!
-
-<!-- CONTACT -->
-
-## Contact
-
+```sh
+git clone https://github.com/rhishi-kesh/Ice-Cream-Vue-Js.git
+```
